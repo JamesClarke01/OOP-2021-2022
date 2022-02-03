@@ -26,12 +26,14 @@ public class Main
             System.out.println(ginger.getLives());
         }
 
-        for(int i = 0; i<10; i++)
-        {
-            //System.out.println("Ginger has "+ ginger.getLives()+ " lives left");
-            ginger.kill();
+        ginger.kill();
+
+        // for(int i = 0; i<10; i++)
+        // {
+        //     //System.out.println("Ginger has "+ ginger.getLives()+ " lives left");
+        //     ginger.kill();
             
-        }
+        // }
 
     }
 }

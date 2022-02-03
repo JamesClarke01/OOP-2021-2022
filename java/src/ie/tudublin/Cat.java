@@ -26,7 +26,7 @@ public class Cat extends Animal
     public Cat(String name)
     {
         super(name);
-        this.NumLives = 9;
+        NumLives = 9;
     }
 
 }

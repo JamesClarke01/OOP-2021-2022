@@ -20,11 +20,11 @@ public class Main
         
         Cat ginger = new Cat("Ginger");
 
-        // while(ginger.getLives() > 0)
-        // {
-        //     ginger.kill();
-        //     System.out.println(ginger.getLives());
-        // }
+        while(ginger.getLives() > 0)
+        {
+            ginger.kill();
+            System.out.println(ginger.getLives());
+        }
 
         for(int i = 0; i<10; i++)
         {

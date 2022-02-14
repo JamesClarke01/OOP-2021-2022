@@ -38,6 +38,8 @@ public class Loops extends PApplet
 
 	}
 
+	
+
 	public void rainbowSquares()
 	{
 		for(int i = 0; i < 10; i++)
@@ -49,16 +51,44 @@ public class Loops extends PApplet
 		}
 	}
 
+	public void circles()
+	{
+		for(int i = 10; i > 0; i--)
+		{
+			fill((255/10) * i, 255, 255);
+			stroke((255/10) * i, 255, 255);
+			circle(width/2, height/2, i * (width/10));
+		}
+	}
+
+	public void starThing()
+	{
+		float angle = 360/5;
+		background(0);
+		stroke(0,255,255);
+		line(width/2, height/2, width/2, 50);
+	}
+
 	
 	public void draw()
 	{
 		switch(mode)	
 		{
 			case 0:
+				clear();
 				rainbowLoop();
 				break;
 			case 1:
+				clear();
 				rainbowSquares();
+				break;
+			case 2:
+				clear();
+				circles();
+				break;
+			case 3:
+				clear();
+				starThing();
 				break;
 		}
 	}

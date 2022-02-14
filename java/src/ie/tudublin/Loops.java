@@ -88,7 +88,7 @@ public class Loops extends PApplet
 				break;
 			case 3:
 				clear();
-				starThing();
+				//starThing();
 				break;
 		}
 	}

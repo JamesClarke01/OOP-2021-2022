@@ -94,7 +94,37 @@ public class Arrays extends PApplet {
                 // Put your code here!
                 break;
             case 2:
-                //
+                background(0);
+                float r = width * 0.3f;
+                float cx = width / 2;
+                float cy = height / 2;
+                stroke(255);
+                noFill();
+
+                
+                circle(cx, cy, r * 2.0f);
+
+                float tot = 0;
+
+                for(float f:rainfall)
+                {
+                    tot += f;
+                }
+                float start = 0;
+                for (int i=0; i<rainfall.length; i++)
+                {
+                    float val = map(rainfall[i], 0, tot, 0 , TWO_PI);
+                    float c = map(i, 0, rainfall.length, 0, 255);
+                    stroke(0);
+                    fill(c, 255, 255);
+                    arc(cx, cy, r * 2, r*2, start, start + val);
+
+                    
+
+                    start = start+val;
+                }
+
+
                 break;
             }        
     }    

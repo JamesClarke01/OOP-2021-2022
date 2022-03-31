@@ -34,8 +34,6 @@ public class Main
         processing.core.PApplet.runSketch( a, new Arrays());
     }
 
-<<<<<<< HEAD
-=======
     public static void life()
 	{
 		String[] a = {"MAIN"};
@@ -43,7 +41,6 @@ public class Main
     }
 
 
->>>>>>> f5780f3ec99e1f3df8acf09cab17fbe0a958bfc2
     public static void audio1()
 	{
 		String[] a = {"MAIN"};

@@ -13,6 +13,8 @@ public class Star
     private float zG;
     private float absMag;
 
+    private int colour;
+
     
 
     @Override
@@ -87,6 +89,21 @@ public class Star
         this.absMag = absMag;
     }
 
+    public float getMappedX(StarMap pa)
+    {
+        return PApplet.map(xG, -5, 5, pa.border, pa.width - pa.border);
+    }
+
+    public float getMappedY(StarMap pa)
+    {
+        return PApplet.map(yG, -5, 5, pa.border, pa.height - pa.border);
+    }
+
+    public void setColour(int colour)
+    {
+        this.colour = colour;
+    }
+
     public void render(StarMap pa)
     {
         float x = PApplet.map(xG, -5, 5, pa.border, pa.width - pa.border);
@@ -96,7 +113,7 @@ public class Star
         pa.stroke(255, 255, 0);
         pa.line(x, y -5, x, y + 5);
         pa.line(x-5, y, x + 5, y);
-        pa.stroke(255, 0, 0);
+        pa.stroke(colour, 0, 0);
         pa.noFill();
         pa.circle(x, y, absMag);
         pa.fill(255);

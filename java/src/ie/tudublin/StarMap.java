@@ -10,6 +10,8 @@ public class StarMap extends PApplet {
 
     ArrayList<Star> stars = new ArrayList<Star>();
     
+    Star firstStarClicked, secondStarClicked;
+    
     public float border;
 
     void drawGrid()
@@ -51,9 +53,40 @@ public class StarMap extends PApplet {
     }
 
 
+    
+
     public void mouseClicked()
     {
-        
+        float starPosX, starPosY;
+
+
+        for(Star s:stars)
+        {
+            //starPosX = map(s.getxG(), -5, 5, border, width - border);
+            //starPosY = map(s.getyG(), -5, 5, border, width - border);
+
+            if (dist(s.getMappedX(this), s.getMappedY(this), mouseX, mouseY) < s.getAbsMag())
+            {
+                System.out.print(s);
+                if(firstStarClicked == null)
+                {
+                    firstStarClicked = s;
+                }
+                else if(secondStarClicked == null)
+                {
+                    secondStarClicked = s;
+                }
+                else
+                {
+                    firstStarClicked = s;
+                    secondStarClicked = null;
+                }
+            }
+
+
+
+        }
+
     }
 
     public void setup() {
@@ -68,7 +101,17 @@ public class StarMap extends PApplet {
     {
         for(Star s:stars)
         {
+            if(s == firstStarClicked || s == secondStarClicked)
+            {
+                s.setColour(100);
+            }
+            else
+            {
+                s.setColour(255);
+            }
+
             s.render(this);
+            
         }
     }
 
@@ -77,5 +120,18 @@ public class StarMap extends PApplet {
         background(0);
         drawGrid();
         drawStars();
+
+        fill(247, 241, 57);
+        
+        if(firstStarClicked != null && secondStarClicked != null)
+        {
+            line(firstStarClicked.getMappedX(this), firstStarClicked.getMappedY(this), secondStarClicked.getMappedX(this), secondStarClicked.getMappedY(this));
+        }
+        
+
+
+       
     }
+
+    
 }
